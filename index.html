@@ -79,7 +79,9 @@
             }
 
         });
-        ///////////allows us the change data state to animate and replaces still img with gif//////////////////
+       
+    });
+     ///////////allows us the change data state to animate and replaces still img with gif//////////////////
         $(document).on("click", ".gif", function() {
             // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
             var state = $(this).attr("data-state");
@@ -90,13 +92,12 @@
             if (state === "still") {
                 $(this).attr("src", $(this).attr("data-animate"));
                 $(this).attr("data-state", "animate");
-            } else {
+            } else if (state ==="animate"){
                 $(this).attr("src", $(this).attr("data-still"));
                 $(this).attr("data-state", "still");
             }
 
         });
-    });
     //  On Click event to append new search item
     $("#gifSearch").on("click", function(event) {
         event.preventDefault();
